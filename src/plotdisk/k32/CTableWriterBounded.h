@@ -50,7 +50,7 @@ public:
         const uint32 c2Interval       = kCheckpoint1Interval * kCheckpoint2Interval;
 
         const uint64 tableLength      = _context.entryCounts[(int)TableId::Table7];
-        const uint32 c1TotalEntries   = (uint32)CDiv( tableLength, (int)c1Interval ) + 1; // +1 because chiapos adds an extra '0' entry at the end
+        const uint32 c1TotalEntries   = (uint32)CDiv( tableLength, (int)c1Interval ) + 1; // +1 because chikpos adds an extra '0' entry at the end
         const uint32 c2TotalEntries   = (uint32)CDiv( tableLength, (int)c2Interval ) + 1; // +1 because we add a short-circuit entry to prevent C2 lookup overflows
                                                                                         // #TODO: Remove the extra c2 entry?
 
@@ -221,7 +221,7 @@ public:
         // Seek back to the begining of the C1 table and
         // write C1 and C2 buffers to file, then seek back to the end of the C3 table
 
-        c1Buffer[c1TotalEntries-1] = 0;          // Chiapos adds a trailing 0
+        c1Buffer[c1TotalEntries-1] = 0;          // Chikpos adds a trailing 0
         c2Buffer[c2TotalEntries-1] = 0xFFFFFFFF; // C2 overflow protection      // #TODO: Remove?
 
         _readFence.Reset( 0 );

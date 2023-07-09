@@ -1,7 +1,7 @@
 #include <vector>
 #include <cmath>
 #include <queue>
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 
 // Need to define this for FSE_CTABLE_SIZE/FSE_DTABLE_SIZE
 #define FSE_STATIC_LINKING_ONLY
@@ -152,7 +152,7 @@ void DumpFSETables( FILE* file, bool compression )
 
 
 ///
-/// Takem from chiapos
+/// Takem from chikpos
 ///
 std::vector<short> CreateNormalizedCount(double R)
 {

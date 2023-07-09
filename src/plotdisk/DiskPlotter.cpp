@@ -529,7 +529,7 @@ Creates plots by making use of a disk to temporarily store and read values.
  --fp-threads <n>   : Override the thread count for forward propagation.
 
  --c-threads <n>    : Override the thread count for C table processing.
-                      (Equivalent to Phase 4 in chiapos, but performed 
+                      (Equivalent to Phase 4 in chikpos, but performed 
                       at the end of Phase 1.)
 
 --p2-threads <n>    : Override the thread count for Phase 2.

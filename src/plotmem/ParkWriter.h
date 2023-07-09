@@ -1,6 +1,6 @@
 #pragma once
 #include "plotting/CTables.h"
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 #include "threading/ThreadPool.h"
 
 struct WriteParkJob

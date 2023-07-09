@@ -1,5 +1,5 @@
 #include "PlotReader.h"
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 #include "util/BitView.h"
 #include "plotting/PlotTools.h"
 #include "plotting/CTables.h"

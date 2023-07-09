@@ -56,7 +56,7 @@ inline BackPtr LinePointToSquare64( uint64 index );
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wattributes"
-/// #NOTE: From chiapos:
+/// #NOTE: From chikpos:
 // Calculates x * (x-1) / 2. Division is done before multiplication.
 //-----------------------------------------------------------
 FORCE_INLINE uint64 GetXEnc( uint64 x )
@@ -94,7 +94,7 @@ FORCE_INLINE uint128 GetXEnc128( uint64 x )
     return r;
 }
 
-/// #NOTE: From chiapos:
+/// #NOTE: From chikpos:
 // Encodes two max k bit values into one max 2k bit value. This can be thought of
 // mapping points in a two dimensional space into a one dimensional space. The benefits
 // of this are that we can store these line points efficiently, by sorting them, and only

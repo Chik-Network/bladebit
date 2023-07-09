@@ -239,7 +239,7 @@ void ParseCommandLine( GlobalPlotConfig& cfg, int argc, const char* argv[] )
         }
         else if( cli.ArgConsume( "--about" ) )
         {
-            Log::Line( "BladeBit Chia Plotter" );
+            Log::Line( "BladeBit Chik Plotter" );
             Log::Line( "Version      : %s", BLADEBIT_VERSION_STR   );
             Log::Line( "Git Commit   : %s", BLADEBIT_GIT_COMMIT    );
             Log::Line( "Compiled With: %s", BBGetCompilerVersion() );
@@ -413,7 +413,7 @@ void ParseCommandLine( GlobalPlotConfig& cfg, int argc, const char* argv[] )
 
     // Config Summary
     Log::Line( "" );
-    Log::Line( "Bladebit Chia Plotter" );
+    Log::Line( "Bladebit Chik Plotter" );
     Log::Line( "Version      : %s", BLADEBIT_VERSION_STR   );
     Log::Line( "Git Commit   : %s", BLADEBIT_GIT_COMMIT    );
     Log::Line( "Compiled With: %s", BBGetCompilerVersion() );

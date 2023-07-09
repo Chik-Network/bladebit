@@ -1,8 +1,8 @@
-# BladeBit Chia Plotter
+# BladeBit Chik Plotter
 
-[![Release Builds](https://github.com/Chia-Network/bladebit/actions/workflows/build-release.yml/badge.svg?branch=master&event=push)](https://github.com/Chia-Network/bladebit/actions/workflows/build-release.yml)
+[![Release Builds](https://github.com/Chik-Network/bladebit/actions/workflows/build-release.yml/badge.svg?branch=master&event=push)](https://github.com/Chik-Network/bladebit/actions/workflows/build-release.yml)
 
-A high-performance **k32-only**, Chia (XCH) plotter supporting in-RAM and disk-based plotting.
+A high-performance **k32-only**, Chik (XCK) plotter supporting in-RAM and disk-based plotting.
 
 ## Requirements
 
@@ -54,7 +54,7 @@ Optionally install `gmp`:
 ```bash
 
 # Clone the repo & its submodules
-git clone https://github.com/Chia-Network/bladebit.git && cd bladebit
+git clone https://github.com/Chik-Network/bladebit.git && cd bladebit
 
 # Create a build directory for cmake and cd into it
 mkdir -p build && cd build
@@ -124,5 +124,5 @@ Basic `diskplot` usage:
 Licensed under the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE](LICENSE).
 
 
-Copyright 2023 Harold Brenes, Chia Network Inc
+Copyright 2023 Harold Brenes, Chik Network Inc
 

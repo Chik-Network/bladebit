@@ -95,7 +95,7 @@ void PlotTools::GeneratePlotIdAndMemo(
     bls::PrivateKey sk      = bls::AugSchemeMPL().KeyGen( bls::Bytes( seed, sizeof( seed ) ) );
     bls::G1Element  localPk = std::move( KeyTools::MasterSkToLocalSK( sk ) ).GetG1Element();
 
-    // #See: chia-blockchain create_plots.py
+    // #See: chik-blockchain create_plots.py
     //       The plot public key is the combination of the harvester and farmer keys
     //       New plots will also include a taproot of the keys, for extensibility
     const bool includeTaproot = contractPuzzleHash != nullptr;
@@ -131,7 +131,7 @@ void PlotTools::GeneratePlotIdAndMemo(
         ASSERT( contractPuzzleHash );
 
         const auto& ph = *contractPuzzleHash;
-        std::vector<uint8_t> phBytes( (uint8_t*)ph.data, (uint8_t*)ph.data + CHIA_PUZZLE_HASH_SIZE );
+        std::vector<uint8_t> phBytes( (uint8_t*)ph.data, (uint8_t*)ph.data + CHIK_PUZZLE_HASH_SIZE );
         
         // Gen plot id
         std::vector<uint8_t> plotIdBytes = phBytes;

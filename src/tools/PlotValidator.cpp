@@ -1,5 +1,5 @@
 #include "plotting/CTables.h"
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 #include "util/Log.h"
 #include "util/BitView.h"
 #include "io/FileStream.h"
@@ -1155,7 +1155,7 @@ void FxGen( const TableId table, const uint32 k,
 /// Convertes 8 bytes to uint64 and endian-swaps it.
 /// This takes any byte alignment, so that bytes does
 /// not have to be aligned to 64-bit boundary.
-/// This is for compatibility for how chiapos extracts
+/// This is for compatibility for how chikpos extracts
 /// bytes into integers.
 //-----------------------------------------------------------
 inline uint64 BytesToUInt64( const byte bytes[8] )
@@ -1173,7 +1173,7 @@ inline uint64 BytesToUInt64( const byte bytes[8] )
 // bits + the number of bits overflows the 64-bit field.
 // That is, if the local bit offset in the target bit field
 // + the bitCount is greater than 64.
-// This function is for compatibility with the way chiapos
+// This function is for compatibility with the way chikpos
 // slices bits off of binary byte blobs.
 //-----------------------------------------------------------
 inline uint64 SliceUInt64FromBits( const byte* bytes, uint32 bitOffset, uint32 bitCount )

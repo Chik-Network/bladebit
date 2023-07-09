@@ -4,7 +4,7 @@
 #include "util/Log.h"
 #include "algorithm/RadixSort.h"
 #include "pos/chacha8.h"
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 #include "algorithm/YSort.h"
 #include "plotmem/FxSort.h"
 #include <atomic>

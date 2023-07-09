@@ -3,7 +3,7 @@
 #include "algorithm/RadixSort.h"
 #include "algorithm/YSort.h"
 #include "threading/ThreadPool.h"
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 #include "PlotContext.h"
 
 template<typename TMeta>

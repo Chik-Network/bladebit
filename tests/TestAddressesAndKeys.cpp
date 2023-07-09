@@ -1,6 +1,6 @@
 #include "TestUtil.h"
 #include "util/KeyTools.h"
-#include "TestXchAddressData.h"
+#include "TestXckAddressData.h"
 #include "util/Util.h"
 
 //-----------------------------------------------------------
@@ -18,7 +18,7 @@ TEST_CASE( "mainnet-contract-address-decode", "[unit-core][contract-address]" )
         PuzzleHash expectedHash;
         ENSURE( PuzzleHash::FromHex( pair.hash, expectedHash ) );
 
-        ENSURE( memcmp( generatedHash.data, expectedHash.data, CHIA_PUZZLE_HASH_SIZE ) == 0 );
+        ENSURE( memcmp( generatedHash.data, expectedHash.data, CHIK_PUZZLE_HASH_SIZE ) == 0 );
     }
 }
 
@@ -37,6 +37,6 @@ TEST_CASE( "testnet-contract-address-decode", "[unit-core][contract-address]" )
         PuzzleHash expectedHash;
         ENSURE( PuzzleHash::FromHex( pair.hash, expectedHash ) );
 
-        ENSURE( memcmp( generatedHash.data, expectedHash.data, CHIA_PUZZLE_HASH_SIZE ) == 0 );
+        ENSURE( memcmp( generatedHash.data, expectedHash.data, CHIK_PUZZLE_HASH_SIZE ) == 0 );
     }
 }

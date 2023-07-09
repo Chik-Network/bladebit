@@ -4,7 +4,7 @@
 #include "util/Util.h"
 #include "util/Log.h"
 #include "Config.h"
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 
 
 template<typename JobT>

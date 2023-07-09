@@ -1,5 +1,5 @@
 #pragma once
-#include "ChiaConsts.h"
+#include "ChikConsts.h"
 #include "plotting/Tables.h"
 #include "plotdisk/DiskPlotConfig.h"
 

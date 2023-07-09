@@ -4,7 +4,7 @@
 //#include "util/Util.h"
 //#include "threading/MTJob.h"
 //#include "pos/chacha8.h"
-//#include "ChiaConsts.h"
+//#include "ChikConsts.h"
 //#include "plotdisk/DiskBufferQueue.h"
 //#include "algorithm/RadixSort.h"
 //#include "util/CliParser.h"

@@ -510,7 +510,7 @@ void GeneratePlotIdAndMemo( Config& cfg, byte plotId[32], byte plotMemo[48+48+32
     bls::PrivateKey sk      = bls::AugSchemeMPL().KeyGen( bls::Bytes( seed, sizeof( seed ) ) );
     bls::G1Element  localPk = std::move( MasterSkToLocalSK( sk ) ).GetG1Element();
 
-    // #See: chia-blockchain create_plots.py
+    // #See: chik-blockchain create_plots.py
     //       The plot public key is the combination of the harvester and farmer keys
     //       New plots will also include a taproot of the keys, for extensibility
     const bool includeTaproot = cfg.contractPuzzleHash != nullptr;
@@ -569,19 +569,19 @@ void GeneratePlotIdAndMemo( Config& cfg, byte plotId[32], byte plotMemo[48+48+32
 //-----------------------------------------------------------
 bls::PrivateKey MasterSkToLocalSK( bls::PrivateKey& sk )
 {
-    // #SEE: chia-blockchain: derive-keys.py
+    // #SEE: chik-blockchain: derive-keys.py
     // EIP 2334 bls key derivation
     // https://eips.ethereum.org/EIPS/eip-2334
     // 12381 = bls spec number
-    // 8444  = Chia blockchain number and port number
+    // 8444  = Chik blockchain number and port number
     // 0, 1, 2, 3, 4, 5, 6 farmer, pool, wallet, local, backup key, singleton, pooling authentication key numbers
 
     const uint32 blsSpecNum         = 12381;
-    const uint32 chiaBlockchainPort = 8444; 
+    const uint32 chikBlockchainPort = 8444; 
     const uint32 localIdx           = 3;
 
     bls::PrivateKey ssk = bls::AugSchemeMPL().DeriveChildSk( sk, blsSpecNum );
-    ssk = bls::AugSchemeMPL().DeriveChildSk( ssk, chiaBlockchainPort );
+    ssk = bls::AugSchemeMPL().DeriveChildSk( ssk, chikBlockchainPort );
     ssk = bls::AugSchemeMPL().DeriveChildSk( ssk, localIdx );
     ssk = bls::AugSchemeMPL().DeriveChildSk( ssk, 0        );
 
