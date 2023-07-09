@@ -196,15 +196,15 @@ if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 
     # Dependency config
     target_compile_options(bls     PRIVATE /MP)
-    target_compile_options(relic_s PRIVATE /MP)
+    #target_compile_options(relic_s PRIVATE /MP)
     target_compile_options(sodium  PRIVATE /MP)
 
     target_compile_options(bls     PRIVATE $<$<CONFIG:Release>:/MT>)
-    target_compile_options(relic_s PRIVATE $<$<CONFIG:Release>:/MT>)
+    #target_compile_options(relic_s PRIVATE $<$<CONFIG:Release>:/MT>)
     target_compile_options(sodium  PRIVATE $<$<CONFIG:Release>:/MT>)
 
     target_compile_options(bls     PRIVATE $<$<CONFIG:Debug>:/MTd>)
-    target_compile_options(relic_s PRIVATE $<$<CONFIG:Debug>:/MTd>)
+    #target_compile_options(relic_s PRIVATE $<$<CONFIG:Debug>:/MTd>)
     target_compile_options(sodium  PRIVATE $<$<CONFIG:Debug>:/MTd>)
     
 else()
