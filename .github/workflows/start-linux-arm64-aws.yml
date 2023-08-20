@@ -47,7 +47,7 @@ jobs:
             ec2-instance-type: t4g.small
             subnet-id: subnet-0e542fed87a08293f
             security-group-id: sg-0768ca468a90316b1
-            iam-role-name: my-github-actions-role
+            iam-role-name: ${{ secrets.AWS_ROLE_TO_ASSUME }}
             aws-resource-tags: >
               [
                 {"Key": "Name", "Value": "ec2-github-runner"},
