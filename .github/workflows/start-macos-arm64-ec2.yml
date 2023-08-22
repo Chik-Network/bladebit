@@ -1,4 +1,4 @@
-name: Start self-hosted EC2 runner (Linux arm64)
+name: Start AWS EC2 runner (macOS arm64)
 on:
   workflow_dispatch:
   workflow_call:
@@ -7,7 +7,7 @@ on:
         description: name of runner to use
         required: false
         type: string
-        default: t4g.small
+        default: mac2.metal
     secrets:
       GH_PERSONAL_ACCESS_TOKEN:
         required: true
@@ -21,7 +21,7 @@ on:
 
 jobs:
   start-runner:
-    name: start self-hosted EC2 runner
+    name: Start AWS EC2 runner
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -35,37 +35,19 @@ jobs:
         with:
           aws-region: ap-southeast-1
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-      - name: start EC2 runner
+      - name: Start EC2 runner
         id: start-ec2-runner
         uses: Chik-Network/ec2-github-runner@v2.3.4
         with:
             mode: start
             github-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-            ec2-image-id: ami-0666798135ce10443
-            ec2-instance-type: t4g.small
+            ec2-image-id: ami-0e4e548b16ac9ed52
+            ec2-instance-type: mac2.metal
             subnet-id: subnet-0e542fed87a08293f
             security-group-id: sg-05ac96467d3670aba
             #iam-role-name: github-actions-role
             aws-resource-tags: >
               [
-                {"Key": "Name", "Value": "ec2-github-runner"},
+                {"Key": "Name", "Value": "macos-arm64-github-runner"},
                 {"Key": "GitHubRepository", "Value": "${{ github.repository }}"}
               ]
-            pre-runner-script: |
-                 sudo apt-get update && \
-                 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common && \
-                 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
-                 sudo add-apt-repository "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
-                 sudo apt-get update && \
-                 sudo apt-get install -y docker-ce && \
-                 sudo systemctl start docker
-
-      - name: get volume-id
-        id: get-volume-id
-        run: |
-          echo "volume-id=$(aws ec2 describe-instances --instance-ids ${{ steps.start-ec2-runner.outputs.ec2-instance-id }} --query 'Reservations[*].Instances[*].BlockDeviceMappings[*].Ebs.VolumeId' --output text)" >> $GITHUB_OUTPUT
-      - name: resize rootfs
-        env:
-          VOLUME_ID: ${{ steps.get-volume-id.outputs.volume-id }}
-        run: |
-          aws ec2 modify-volume --size 30 --volume-id $VOLUME_ID
