@@ -72,4 +72,4 @@ jobs:
         env:
           VOLUME_ID: ${{ steps.get-volume-id.outputs.volume-id }}
         run: |
-          aws ec2 modify-volume --size 30 --volume-id $VOLUME_ID
+          aws ec2 modify-volume --size 100 --volume-id $VOLUME_ID
