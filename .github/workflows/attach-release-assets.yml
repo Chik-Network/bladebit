@@ -42,7 +42,7 @@ jobs:
             green_reaper-v${BB_VERSION}-linux-x86-64.tar.gz
             green_reaper-v${BB_VERSION}-linux-ARM64.tar.gz
             green_reaper-v${BB_VERSION}-macos-x86-64.tar.gz
-            green_reaper-v${BB_VERSION}-macos-arm64.tar.gz
+            #green_reaper-v${BB_VERSION}-macos-arm64.tar.gz
             green_reaper-v${BB_VERSION}-windows-x86-64.zip
           )
 
