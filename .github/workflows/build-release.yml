@@ -11,7 +11,7 @@ jobs:
   build-harvester-linux-x86-64:
     runs-on: ubuntu-20.04
     container:
-      image: ghcr.io/chik-network/build-images/manylinux2014_cuda_x86_64:sha-e545a1e7e0dffb82a224518aa96424e665b848e5
+      image: ghcr.io/chik-network/build-images/manylinux_cuda_x86_64:sha-57f69aa89c36c436f0d8111e7dd45e0e10a4d11e
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -105,7 +105,7 @@ jobs:
   build-harvester-linux-arm64:
     runs-on: [ARM64, Linux]
     container:
-      image: ghcr.io/chik-network/build-images/manylinux2014_cuda_aarch64:sha-e545a1e7e0dffb82a224518aa96424e665b848e5
+      image: ghcr.io/chik-network/build-images/manylinux_cuda_aarch64:sha-57f69aa89c36c436f0d8111e7dd45e0e10a4d11e
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -282,7 +282,7 @@ jobs:
       image: quay.io/centos/centos:stream8
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set Env
         uses: Chik-Network/actions/setjobenv@main
